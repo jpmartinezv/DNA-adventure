@@ -24,7 +24,7 @@ def vp_start_gui():
     global val, w, root
     root = Tk()
     root.title('New_Toplevel_1')
-    root.geometry('600x450+650+150')
+    root.geometry('1500x450+350+150')
     w = New_Toplevel_1 (root)
     gui_support.init(root, w)
     root.mainloop()
@@ -46,6 +46,7 @@ def destroy_New_Toplevel_1 ():
     w.destroy()
     w = None
 
+import multibox
 
 class New_Toplevel_1:
     def __init__(self, master=None):
@@ -56,11 +57,18 @@ class New_Toplevel_1:
         _ana2color = '#d9d9d9' # X11 color: 'gray85' 
 
 
+        self.MultiListBox1 = multibox.MultiListbox(master, (('ID', 7), ('Nombre', 10), ('Secuencia', 10)))
+        self.MultiListBox1.place(relx=0.03,rely=0.11,relheight=0.56,relwidth=0.26)
+        self.MultiListBox1.configure(background="white")
+        self.MultiListBox1.configure(width=154)
+        
+        """
         self.Listbox1 = Listbox (master)
         self.Listbox1.place(relx=0.03,rely=0.11,relheight=0.56,relwidth=0.26)
         self.Listbox1.configure(background="white")
         self.Listbox1.configure(font="TkFixedFont")
         self.Listbox1.configure(width=154)
+        """
 
         self.Text1 = Text (master)
         self.Text1.place(relx=0.33,rely=0.11,relheight=0.15,relwidth=0.63)

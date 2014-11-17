@@ -20,9 +20,8 @@ except ImportError:
     py3 = 1
 
 def fillList():
-    for item in ["one", "two", "three", "four", "two", "three", "four", "two", "three", "four", "two", "three", "four", "two", "three", "four", "two", "three", "four", "two", "three", "four"]:
-        w.Listbox1.insert(END, item)
-
+    for item in [('a', 'b', 'e'), ('c', 'd', 'f')]:
+        w.MultiListBox1.insert(END, item)
 
 def init(top, gui, arg=None):
     global w, top_level, root
