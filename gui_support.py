@@ -20,6 +20,7 @@ except ImportError:
     py3 = 1
 
 import csv
+from biolib import *
 
 def fillList():
     with open('in.csv', 'rb') as f:
@@ -29,9 +30,26 @@ def fillList():
     for item in motif_list:
         w.MultiListBox1.insert(END, item)
 
+    w.MultiListBox1.selection_set(0);
+
 def Procesar():
-    a = w.MultiListBox1.curselection()
-    print w.MultiListBox1.get(a[0])
+    idx = w.MultiListBox1.curselection()
+    motif = w.MultiListBox1.get(idx[0])
+
+    seq1 = w.Text1.get("1.0", END).strip(' \t\n\r')
+    seq2 = w.Text2.get("1.0", END).strip(' \t\n\r')
+    seq3 = w.Text3.get("1.0", END).strip(' \t\n\r')
+
+    dist = w.Entry1.get()
+    radio = w.Entry2.get()
+    conservacion = w.Entry3.get()
+
+    list = [seq1, seq2, seq3]
+    parameters = [dist, radio, conservacion]
+
+    bio = BioLib(list, parameters)
+    bio.matchMotif(motif[2])
+    bio.showMatches()
 
 
 def init(top, gui, arg=None):
