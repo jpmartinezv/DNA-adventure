@@ -51,7 +51,6 @@ def Procesar():
     bio.matchMotif(motif[2])
     bio.showMatches()
 
-
 def init(top, gui, arg=None):
     global w, top_level, root
     w = gui

@@ -23,7 +23,7 @@ def vp_start_gui():
     '''Starting point when module is the main routine.'''
     global val, w, root
     root = Tk()
-    root.title('New_Toplevel_1')
+    root.title('DNA-adventure')
     root.geometry('1500x450+350+150')
     w = New_Toplevel_1 (root)
     gui_support.init(root, w)
@@ -35,7 +35,7 @@ def create_New_Toplevel_1 (root, param=None):
     global w, w_win, rt
     rt = root
     w = Toplevel (root)
-    w.title('New_Toplevel_1')
+    w.title('DNA-adventure')
     w.geometry('600x450+650+150')
     w_win = New_Toplevel_1 (w)
     gui_support.init(w, w_win, param)
@@ -57,7 +57,7 @@ class New_Toplevel_1:
         _ana2color = '#d9d9d9' # X11 color: 'gray85' 
 
 
-        self.MultiListBox1 = MultiListbox(master, (('ID', 7), ('Nombre', 10), ('Secuencia', 10)))
+        self.MultiListBox1 = MultiListbox(master, (('ID', 1), ('Nombre', 10), ('Secuencia', 10)))
         self.MultiListBox1.place(relx=0.03,rely=0.11,relheight=0.56,relwidth=0.26)
         self.MultiListBox1.configure(background="white")
         self.MultiListBox1.configure(width=154)
@@ -115,13 +115,13 @@ class New_Toplevel_1:
         self.Label6.configure(text='''radio de conservacion''')
 
         self.Entry2 = Entry (master)
-        self.Entry2.place(relx=0.25,rely=0.84,relheight=0.05,relwidth=0.24)
+        self.Entry2.place(relx=0.25,rely=0.78,relheight=0.05,relwidth=0.24)
         self.Entry2.configure(background="white")
         self.Entry2.configure(font="TkFixedFont")
         self.Entry2.configure(selectbackground="#c4c4c4")
 
         self.Entry3 = Entry (master)
-        self.Entry3.place(relx=0.25,rely=0.78,relheight=0.05,relwidth=0.24)
+        self.Entry3.place(relx=0.25,rely=0.84,relheight=0.05,relwidth=0.24)
         self.Entry3.configure(background="white")
         self.Entry3.configure(font="TkFixedFont")
         self.Entry3.configure(selectbackground="#c4c4c4")
@@ -139,11 +139,6 @@ class New_Toplevel_1:
         self.Procesar.configure(width=237)
 
 
-
-
-
 if __name__ == '__main__':
     vp_start_gui()
-
-
 
