@@ -19,9 +19,20 @@ except ImportError:
     import tkinter.ttk as ttk
     py3 = 1
 
+import csv
+
 def fillList():
-    for item in [('a', 'b', 'e'), ('c', 'd', 'f')]:
+    with open('in.csv', 'rb') as f:
+        reader = csv.reader(f)
+        motif_list = map(tuple, reader)
+
+    for item in motif_list:
         w.MultiListBox1.insert(END, item)
+
+def Procesar():
+    a = w.MultiListBox1.curselection()
+    print w.MultiListBox1.get(a[0])
+
 
 def init(top, gui, arg=None):
     global w, top_level, root

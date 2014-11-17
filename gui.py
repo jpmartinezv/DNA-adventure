@@ -46,7 +46,7 @@ def destroy_New_Toplevel_1 ():
     w.destroy()
     w = None
 
-import multibox
+from multibox import *
 
 class New_Toplevel_1:
     def __init__(self, master=None):
@@ -57,18 +57,11 @@ class New_Toplevel_1:
         _ana2color = '#d9d9d9' # X11 color: 'gray85' 
 
 
-        self.MultiListBox1 = multibox.MultiListbox(master, (('ID', 7), ('Nombre', 10), ('Secuencia', 10)))
+        self.MultiListBox1 = MultiListbox(master, (('ID', 7), ('Nombre', 10), ('Secuencia', 10)))
         self.MultiListBox1.place(relx=0.03,rely=0.11,relheight=0.56,relwidth=0.26)
         self.MultiListBox1.configure(background="white")
         self.MultiListBox1.configure(width=154)
         
-        """
-        self.Listbox1 = Listbox (master)
-        self.Listbox1.place(relx=0.03,rely=0.11,relheight=0.56,relwidth=0.26)
-        self.Listbox1.configure(background="white")
-        self.Listbox1.configure(font="TkFixedFont")
-        self.Listbox1.configure(width=154)
-        """
 
         self.Text1 = Text (master)
         self.Text1.place(relx=0.33,rely=0.11,relheight=0.15,relwidth=0.63)
@@ -141,6 +134,7 @@ class New_Toplevel_1:
         self.Procesar = Button (master)
         self.Procesar.place(relx=0.57,rely=0.71,height=87,width=237)
         self.Procesar.configure(activebackground="#d9d9d9")
+        self.Procesar.configure(command=gui_support.Procesar)
         self.Procesar.configure(text='''Procesar''')
         self.Procesar.configure(width=237)
 
