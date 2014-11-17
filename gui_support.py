@@ -19,12 +19,17 @@ except ImportError:
     import tkinter.ttk as ttk
     py3 = 1
 
+def fillList():
+    for item in ["one", "two", "three", "four", "two", "three", "four", "two", "three", "four", "two", "three", "four", "two", "three", "four", "two", "three", "four", "two", "three", "four"]:
+        w.Listbox1.insert(END, item)
+
 
 def init(top, gui, arg=None):
     global w, top_level, root
     w = gui
     top_level = top
     root = top
+    fillList()
 
 def destroy_window ():
     # Function which closes the window.
